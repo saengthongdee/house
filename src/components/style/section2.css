@@ -1,0 +1,15 @@
+.page {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+.page2 {
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box{
+    padding: 1rem;
+    font-size: 20px;
+  }
+}
