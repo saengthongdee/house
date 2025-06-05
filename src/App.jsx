@@ -3,6 +3,8 @@ import Lenis from "@studio-freight/lenis";
 import Section1 from "./components/page/section1";
 import Section2 from "./components/page/section2";
 import Section3 from "./components/page/section3";
+import Section4 from "./components/page/section4";
+import Nav from "./components/page/nav";
 import "./App.css";
 
 function App() {
@@ -24,11 +26,15 @@ function App() {
   }, []);
 
   return (
-    <div className="scroll-wrapper">
-      <Section1 />
-      <Section2 />
-      <Section3 />
-    </div>
+    <>
+      <Nav />
+      <div className="scroll-wrapper">
+        <Section1 />
+        <Section2 />
+        <Section3 />
+        <Section4 />
+      </div>
+    </>
   );
 }
 
