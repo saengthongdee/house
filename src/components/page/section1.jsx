@@ -136,7 +136,7 @@ function Section1() {
       gsap.to(
         { val: 0 },
         {
-          val: currentCar.topSpeed,
+          val: currentCar.power,
           duration: 2,
           onUpdate: function () {
             document.getElementById("power").innerText = Math.floor(
