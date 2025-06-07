@@ -1,48 +1,53 @@
-nav{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-    background: transparent;
-    position: fixed;
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0px 0;
+  background: transparent;
+  position: fixed;
+  z-index: 999;
+  /* overflow: hidden; */
+
+  .logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: 150px;
+    height: 150px;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  ul {
     z-index: 999;
+    display: flex;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 
-    .logo{
-        position: absolute;
-        top: 2rem;
-        left: 2rem;
-        width: 150px;
-        height: 150px;
+    gap: 4.5rem;
+    list-style: none;
 
-        img{
-            width: 100%;
-            border-radius: 50%;
-            transition: transform 0.3s ease-in-out;
-        }
+    padding: .8rem 5rem;
+    background: linear-gradient(to right, #1c1c1c, #3a3a3a);
+    overflow: hidden;
+
+    li a {
+      font-size: 14.5px;
+      color: #2c2c2c;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      padding-top: .5rem;
+      color: #ececec;
+      
+
+      &:hover {
+        color: rgb(234, 185, 25);
+        transition: color 0.3s ease-in-out;
+      }
     }
-
-    ul{
-        display: flex;
-        
-        gap: 2rem;
-        list-style: none;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-
-        padding: .5rem 2rem;
-        border-radius: 30px; 
-        background-color: rgba(255, 255, 255, 0.1);
-        
-        li  a{
-            font-size: 16px;
-            color: #ffffff;
-            text-decoration: none;
-            font-family: Arial, Helvetica, sans-serif;
-            text-transform: uppercase;
-
-            &:hover {
-                color: rgba(0, 0, 0, 0.5);
-                transition: color 0.3s ease-in-out;
-            }
-        }
-    }
+  }
 }

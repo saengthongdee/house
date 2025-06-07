@@ -14,24 +14,38 @@ function Section1() {
     {
       image: "/image/lamborghiniYellow.webp",
       text: "Aventador S",
-      color: "radial-gradient(circle,rgb(255, 217, 112),rgb(189, 139, 0))",
+      bg: "/image/yellow.webp",
+      price: "550000",
+      topSpeed: "220",
+      power: "800",
     },
     {
       image: "/image/lamborghiniGray.webp",
       text: " Aventador SV",
-      color: "radial-gradient(circle,rgb(161, 161, 161), #2f2f2f)",
+      bg: "/image/gray.webp",
+      price: "500000",
+      topSpeed: "217",
+      power: "730",
     },
     {
       image: "/image/lamborghiniGreen.webp",
       text: "Aventador SVJ",
-      color: "radial-gradient(circle,rgb(99, 227, 57), #00642f)",
+      bg: "/image/green.webp",
+      price: "1000000",
+      topSpeed: "312",
+      power: "990",
     },
     {
       image: "/image/lamborghiniGold.webp",
       text: "Urus",
-      color: "radial-gradient(circle, #f6b700, #2d2d2d)",
+      bg: "/image/gold.webp",
+      price: "550000",
+      topSpeed: "220",
+      power: "730",
     },
   ];
+
+  const currentCar = cars[currentIndex];
 
   const goNext = () => {
     setAction("next");
@@ -79,28 +93,69 @@ function Section1() {
   }, [currentIndex]);
 
   useEffect(() => {
-    const optionRef = document.querySelectorAll(".box-option");
+    if (window.innerWidth > 1025) {
+      const optionRef = document.querySelectorAll(".box-option");
 
-    optionRef.forEach((option, index) => {
-      gsap.fromTo(
-        option,
-        { y: 200, opacity: 0 },
+      optionRef.forEach((option, index) => {
+        gsap.fromTo(
+          option,
+          { y: 200, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.5,
+            ease: "circ.inOut",
+            delay: index * 0.2,
+          }
+        );
+      });
+
+      gsap.to(
+        { val: 0 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 1.5,
-          ease: "circ.inOut",
-          delay: index * 0.2,
+          val: currentCar.price,
+          duration: 2,
+          onUpdate: function () {
+            document.getElementById("price").innerText =
+              "$ " + Math.floor(this.targets()[0].val).toLocaleString();
+          },
         }
       );
-    });
+      gsap.to(
+        { val: 0 },
+        {
+          val: currentCar.topSpeed,
+          duration: 2,
+          onUpdate: function () {
+            document.getElementById("topspeed").innerText = Math.floor(
+              this.targets()[0].val
+            ).toLocaleString();
+          },
+        }
+      );
+      gsap.to(
+        { val: 0 },
+        {
+          val: currentCar.topSpeed,
+          duration: 2,
+          onUpdate: function () {
+            document.getElementById("power").innerText = Math.floor(
+              this.targets()[0].val
+            ).toLocaleString() + " hp";
+          },
+        }
+      );
+    }
   }, [currentIndex]);
 
   return (
     <section
       className="page page1"
       style={{
-        background: cars[currentIndex].color,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${cars[currentIndex].bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+
         transition: "background 0.5s ease-in-out",
       }}
     >
@@ -130,14 +185,15 @@ function Section1() {
           <div className="box-option">
             <div className="border-option">
               <h2>price</h2>
-              <p> $ 500,000</p>
+              <p id="price"> $ 0</p>
             </div>
           </div>
           <div className="box-option">
             <div className="border-option">
+              <div className="cicle"></div>
               <h2>Top speed </h2>
               <div className="speed">
-                <p>217</p>
+                <p id="topspeed">0</p>
                 <p id="speed">mph</p>
               </div>
             </div>
@@ -145,7 +201,7 @@ function Section1() {
           <div className="box-option">
             <div className="border-option">
               <h2>power </h2>
-              <p>790 hp</p>
+              <p id="power"></p>
             </div>
           </div>
         </div>
