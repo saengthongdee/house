@@ -14,7 +14,6 @@ function Section1() {
     {
       image: "/image/lamborghiniYellow.webp",
       text: "Aventador S",
-      bg: "/image/yellow.webp",
       price: "550000",
       topSpeed: "220",
       power: "800",
@@ -22,7 +21,6 @@ function Section1() {
     {
       image: "/image/lamborghiniGray.webp",
       text: " Aventador SV",
-      bg: "/image/gray.webp",
       price: "500000",
       topSpeed: "217",
       power: "730",
@@ -30,7 +28,6 @@ function Section1() {
     {
       image: "/image/lamborghiniGreen.webp",
       text: "Aventador SVJ",
-      bg: "/image/green.webp",
       price: "1000000",
       topSpeed: "312",
       power: "990",
@@ -38,7 +35,6 @@ function Section1() {
     {
       image: "/image/lamborghiniGold.webp",
       text: "Urus",
-      bg: "/image/gold.webp",
       price: "550000",
       topSpeed: "220",
       power: "730",
@@ -129,7 +125,7 @@ function Section1() {
           onUpdate: function () {
             document.getElementById("topspeed").innerText = Math.floor(
               this.targets()[0].val
-            ).toLocaleString();
+            ).toLocaleString() + " km/h";
           },
         }
       );
@@ -139,9 +135,8 @@ function Section1() {
           val: currentCar.power,
           duration: 2,
           onUpdate: function () {
-            document.getElementById("power").innerText = Math.floor(
-              this.targets()[0].val
-            ).toLocaleString() + " hp";
+            document.getElementById("power").innerText =
+              Math.floor(this.targets()[0].val).toLocaleString() + " hp";
           },
         }
       );
@@ -152,13 +147,14 @@ function Section1() {
     <section
       className="page page1"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${cars[currentIndex].bg})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/image/gray.webp")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
 
         transition: "background 0.5s ease-in-out",
       }}
     >
+      <div className="overlay"></div>
       <Swiper ref={swiperRef} speed={1000} className="swiper">
         {cars.map((car, index) => (
           <SwiperSlide key={index}>
@@ -184,24 +180,22 @@ function Section1() {
         <div className="box">
           <div className="box-option">
             <div className="border-option">
-              <h2>price</h2>
               <p id="price"> $ 0</p>
+              <h2>price</h2>
             </div>
           </div>
           <div className="box-option">
             <div className="border-option">
               <div className="cicle"></div>
-              <h2>Top speed </h2>
-              <div className="speed">
                 <p id="topspeed">0</p>
-                <p id="speed">mph</p>
-              </div>
+
+               <h2>Top speed </h2>
             </div>
           </div>
           <div className="box-option">
             <div className="border-option">
-              <h2>power </h2>
               <p id="power"></p>
+              <h2>power </h2>
             </div>
           </div>
         </div>

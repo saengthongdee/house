@@ -9,7 +9,21 @@
   position: relative;
   flex-direction: column;
   overflow: hidden;
-  
+
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(106, 106, 106, 0.8) 100%
+    );
+    z-index: 0;
+  }
 
   .swiper {
     width: 100%;
@@ -24,21 +38,22 @@
       position: relative;
 
       .car {
-        width: 500px;
+        width: 600px;
         max-width: 90%;
         margin-bottom: 20px;
         transition: all 0.7s ease;
-        z-index: 2;
+        z-index: 1;
       }
     }
   }
   .fixed-text {
     font-size: 100px;
     color: rgba(255, 255, 255, 0.7);
-    
+
     position: absolute;
     top: 12rem;
     text-transform: uppercase;
+    z-index: 0;
   }
 
   .button-group {
@@ -73,6 +88,7 @@
     position: absolute;
     bottom: 0;
     align-items: center;
+    z-index: 100;
 
     .box {
       width: 100%;
@@ -84,17 +100,10 @@
       padding: 1rem;
 
       .box-option {
-        width: 400px;
-        height: 150px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
         padding: 1.5rem 2rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
 
         .border-option {
           display: flex;
@@ -103,41 +112,31 @@
           gap: 2rem;
           position: relative;
           overflow: hidden;
-          
 
-          .cicle {
-            position: absolute;
-            top: 2rem;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-          }
 
           h2 {
-            font-size: 18px;
+            font-size: 16px;
             color: #c3c3c3;
             text-transform: uppercase;
             font-family: Arial, Helvetica, sans-serif;
+            border-left: 2px solid #c3c3c3;
+            padding: 0 .5rem;
+
+            
           }
-
           .speed {
-
             #speed {
               text-align: center;
               font-size: 25px;
             }
           }
 
-          p{
-            font-size: 32px;
+          p {
+            font-size: 28px;
             color: #ffffff;
             opacity: 0.8;
             font-family: sans-serif;
           }
-        }
-        &:nth-child(2) {
-          height: 180px;
         }
       }
     }
