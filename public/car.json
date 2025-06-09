@@ -7,70 +7,70 @@
         "topSpeed": "350 km/h",
         "acceleration": "0-100 in 2.5s",
         "price": "$600,000",
-        "image": "/images/revuelto.webp"
+        "image": "/image/lamborghiniBlack.webp"
       },
       {
         "name": "Huracán Tecnica",
         "topSpeed": "325 km/h",
         "acceleration": "0-100 in 3.2s",
         "price": "$245,000",
-        "image": "/images/tecnica.webp"
+        "image": "/image/lamborghiniYellow.webp"
       },
       {
         "name": "Huracán EVO",
         "topSpeed": "325 km/h",
         "acceleration": "0-100 in 2.9s",
         "price": "$261,000",
-        "image": "/images/evo.webp"
+        "image": "/image/lamborghiniGreen.webp"
       },
       {
         "name": "Huracán STO",
         "topSpeed": "310 km/h",
         "acceleration": "0-100 in 3.0s",
         "price": "$327,000",
-        "image": "/images/sto.webp"
+        "image": "/image/lamborghiniBlack.webp"
       },
       {
         "name": "Huracán Sterrato",
         "topSpeed": "260 km/h",
         "acceleration": "0-100 in 3.4s",
         "price": "$278,000",
-        "image": "/images/sterrato.webp"
+        "image": "/image/lamborghiniYellow.webp"
       },
       {
         "name": "Aventador S",
         "topSpeed": "350 km/h",
         "acceleration": "0-100 in 2.9s",
         "price": "$417,000",
-        "image": "/images/aventador-s.webp"
+        "image": "/image/lamborghiniBlack.webp"
       },
       {
         "name": "Aventador SVJ",
         "topSpeed": "350 km/h",
         "acceleration": "0-100 in 2.8s",
         "price": "$517,000",
-        "image": "/images/svj.webp"
+        "image": "/image/lamborghiniYellow.webp"
       },
       {
         "name": "Gallardo LP560-4",
         "topSpeed": "325 km/h",
         "acceleration": "0-100 in 3.7s",
         "price": "$200,000",
-        "image": "/images/gallardo.webp"
+        "image": "/image/lamborghiniBlack.webp"
       },
       {
         "name": "Murciélago LP670-4 SV",
         "topSpeed": "342 km/h",
         "acceleration": "0-100 in 3.2s",
         "price": "$450,000",
-        "image": "/images/murcielago.webp"
+        "image": "/image/lamborghiniGreen.webp"
       },
       {
         "name": "Diablo VT 6.0",
         "topSpeed": "335 km/h",
         "acceleration": "0-100 in 3.9s",
         "price": "$300,000",
-        "image": "/images/diablo.webp"
+        "image": "/image/lamborghiniBlack.webp"
       }
     ]
   },
@@ -82,35 +82,35 @@
         "topSpeed": "305 km/h",
         "acceleration": "0-100 in 3.5s",
         "price": "$225,000",
-        "image": "/images/urus-s.webp"
+        "image": "/image/lamborghiniGold.webp"
       },
       {
         "name": "Urus Performante",
         "topSpeed": "306 km/h",
         "acceleration": "0-100 in 3.3s",
         "price": "$245,000",
-        "image": "/images/urus-perf.webp"
+        "image": "/image/lamborghiniGold.webp"
       },
       {
         "name": "Urus Graphite Capsule",
         "topSpeed": "305 km/h",
         "acceleration": "0-100 in 3.6s",
         "price": "$240,000",
-        "image": "/images/urus-graphite.webp"
+        "image": "/image/lamborghiniGold.webp"
       },
       {
         "name": "Urus Pearl Capsule",
         "topSpeed": "305 km/h",
         "acceleration": "0-100 in 3.5s",
         "price": "$242,000",
-        "image": "/images/urus-pearl.webp"
+        "image": "/image/lamborghiniGold.webp"
       },
       {
         "name": "Urus Mansory Venatus",
         "topSpeed": "320 km/h",
         "acceleration": "0-100 in 3.2s",
         "price": "$500,000",
-        "image": "/images/urus-mansory.webp"
+        "image": "/image/lamborghiniGold.webp"
       }
     ]
   },
@@ -122,35 +122,35 @@
         "topSpeed": "350 km/h",
         "acceleration": "0-100 in 2.8s",
         "price": "$3,600,000",
-        "image": "/images/sian.webp"
+        "image": "/image/lamborghiniGreen.webp"
       },
       {
         "name": "Centenario",
         "topSpeed": "350 km/h",
         "acceleration": "0-100 in 2.8s",
         "price": "$2,000,000",
-        "image": "/images/centenario.webp"
+        "image": "/image/lamborghiniYellow.webp"
       },
       {
         "name": "Veneno",
         "topSpeed": "355 km/h",
         "acceleration": "0-100 in 2.8s",
         "price": "$4,000,000",
-        "image": "/images/veneno.webp"
+        "image": "/image/lamborghiniBlack.webp"
       },
       {
         "name": "Essenza SCV12",
         "topSpeed": "320+ km/h",
         "acceleration": "Track only",
         "price": "$2,800,000",
-        "image": "/images/essenza.webp"
+        "image": "/image/lamborghiniYellow.webp"
       },
       {
         "name": "Reventón",
         "topSpeed": "340 km/h",
         "acceleration": "0-100 in 3.4s",
         "price": "$1,600,000",
-        "image": "/images/reventon.webp"
+        "image": "/image/lamborghiniGreen.webp"
       }
     ]
   }
