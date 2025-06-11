@@ -5,10 +5,3 @@
   box-sizing: border-box;
   font-family: 'Arial Black', sans-serif;
 }
-
-.scroll-wrapper{
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}

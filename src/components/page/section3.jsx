@@ -3,12 +3,19 @@ import "../style/section3.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import axios from "axios";
-import gsap from "gsap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Section3() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [carData, setCarData] = useState([]);
   const [selectedCar, setSelectedCar] = useState(null);
+
+  // Ref
+  const carRef = useRef();
+  const carcenterRef = useRef();
 
   useEffect(() => {
     axios
@@ -23,6 +30,53 @@ function Section3() {
       });
   }, []);
 
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      gsap.fromTo(
+        carRef.current,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "circ.inOut",
+          scrollTrigger: {
+            trigger: carRef.current,
+            start: "top 110%",
+            end: "bottom ",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+      return () => {
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window.innerWidth >= 768 && carcenterRef.current) {
+      gsap.fromTo(
+        carcenterRef.current,
+        { opacity: 0 },
+        {
+          duration: 1,
+          opacity: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: carcenterRef.current,
+            start: "top 60%",
+            end: "bottom",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+      return () => {
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      };
+    }
+  }, []);
+
   return (
     <section
       className="page page3"
@@ -30,7 +84,7 @@ function Section3() {
         backgroundImage: "url(/image/bg.webp)",
       }}
     >
-      <div className="car-show-point">
+      <div className="car-show-point" ref={carcenterRef}>
         {selectedCar && (
           <div className="slide-center">
             <div className="box-car">
@@ -70,7 +124,7 @@ function Section3() {
         ))}
       </div>
 
-      <div className="car-swiper-wrapper">
+      <div className="car-swiper-wrapper" ref={carRef}>
         <Swiper spaceBetween={10} slidesPerView={4.5} grabCursor={true}>
           {carData[activeIndex]?.models?.map((item, index) => (
             <SwiperSlide key={index}>

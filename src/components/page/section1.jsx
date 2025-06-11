@@ -142,6 +142,7 @@ function Section1() {
       );
     }
   }, [currentIndex]);
+  
 
   return (
     <section

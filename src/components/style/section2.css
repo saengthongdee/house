@@ -1,6 +1,6 @@
 .page {
   height: 100vh;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 .page2 {
   display: flex;
@@ -29,6 +29,7 @@
       left: 10rem;
       background-color: #333;
       clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+      
     }
     .box-image:nth-child(1) {
       position: absolute;

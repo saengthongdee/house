@@ -1,6 +1,6 @@
 .page {
   height: 100vh;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 .page3 {
   background-repeat: no-repeat;
@@ -10,6 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  border-bottom: 5px solid #443d3d;
 
   .car-show-point {
     width: 100%;
@@ -19,6 +21,7 @@
     align-items: center;
     position: relative;
     margin-bottom: 5rem;
+
 
     .slide-center {
       display: flex;
@@ -76,7 +79,6 @@
           position: absolute;
           top: -1rem;
           left: 0;
-          /* border: 1px solid red; */
         }
         h2 {
           text-align: center;

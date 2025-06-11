@@ -1,6 +1,6 @@
 .page {
   height: 100vh;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 .page1 {
   display: flex;
@@ -9,6 +9,8 @@
   position: relative;
   flex-direction: column;
   overflow: hidden;
+    overflow: hidden;
+
 
   .overlay{
     position: absolute;

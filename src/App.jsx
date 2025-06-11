@@ -10,8 +10,6 @@ import "./App.css";
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      wrapper: document.querySelector(".scroll-wrapper"),
-      content: document.querySelector(".scroll-wrapper"),
       duration: 1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
