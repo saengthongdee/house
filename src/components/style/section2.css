@@ -47,6 +47,7 @@
     align-items: start;
     text-align: center;
     padding-left: 2rem;
+    z-index: 50;
 
     h2 {
       margin-bottom: 1rem;
@@ -54,6 +55,7 @@
       font-size: 48px;
     }
     p {
+      width: 90%;
       color: #333;
       max-width: 500px;
       text-align: start;
