@@ -159,7 +159,7 @@ function Section1() {
         {cars.map((car, index) => (
           <SwiperSlide key={index}>
             <div className="slide-content">
-              <img src={car.image} alt={`Car ${index}`} className="car" />
+              <img src={car.image} alt={`Car ${index}`} className="car"  loading="lazy"  />
             </div>
           </SwiperSlide>
         ))}

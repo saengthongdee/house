@@ -85,7 +85,7 @@ function Section3() {
         {selectedCar && (
           <div className="slide-center">
             <div className="box-car">
-              <img src={selectedCar.image} alt={selectedCar.name} />
+              <img src={selectedCar.image} alt={selectedCar.name}  loading="lazy" />
               <h2> {selectedCar.name}</h2>
             </div>
             <div className="option">
@@ -132,7 +132,7 @@ function Section3() {
                   setSelectedCar(item);
                 }}
               >
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt={item.name}  loading="lazy" />
               </div>
             </SwiperSlide>
           ))}

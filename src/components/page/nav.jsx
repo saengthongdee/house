@@ -24,7 +24,7 @@ function nav() {
     <div>
       <nav>
         <div className="logo">
-          <img src="/image/logo.webp" alt="" />
+          <img src="/image/logo.webp" alt=""  loading="lazy" />
         </div>
 
         <ul className="list-nav">
