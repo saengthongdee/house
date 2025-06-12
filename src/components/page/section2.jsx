@@ -18,37 +18,55 @@ function section2() {
         trigger: boxRef.current,
         start: "top 80%",
         end: "bottom",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none none",
       },
     });
+    if (window.innerWidth >= 1025) {
+      tl.fromTo(
+        imgRef1.current,
+        { scale: 1, y: 1000, x: -200 },
+        { scale: 1, y: 0, x: 0, duration: 1.5, ease: "circ.inOut" }
+      );
+      tl.fromTo(
+        imgRef2.current,
+        { scale: 1, y: -1000, x: 200 },
+        { scale: 1, y: 0, x: 0, duration: 1.5, ease: "circ.inOut" },
+        "<+1"
+      );
+      tl.fromTo(
+        boxRef.current,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.inOut" }
+      );
+      tl.fromTo(
+        textRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1, ease: "power2.inOut" }
+      );
 
-    tl.fromTo(
-      imgRef1.current,
-      { scale: 1, y: 1000, x: -200 },
-      { scale: 1, y: 0, x: 0, duration: 1.5, ease: "circ.inOut" }
-    );
-    tl.fromTo(
-      imgRef2.current,
-      { scale: 1, y: 1000, x: -200 },
-      { scale: 1, y: 0, x: 0, duration: 1.5, ease: "circ.inOut" },
-      "<.5"
-    );
-    tl.fromTo(
-      boxRef.current,
-      { y: 100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.inOut" }
-    );
-    tl.fromTo(
-      textRef.current,
-      { opacity: 0 },
-      { opacity: 1, duration: 1, ease: "power2.inOut" }
-    );
+      tl.fromTo(
+        btnRef.current,
+        { y: -10, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut" }
+      );
+    } else if (window.innerWidth >= 768) {
+      tl.fromTo(
+        boxRef.current,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power2.inOut" }
+      );
+      tl.fromTo(
+        textRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1, ease: "power2.inOut" }
+      );
 
-    tl.fromTo(
-      btnRef.current,
-      { y: -10, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut" }
-    );
+      tl.fromTo(
+        btnRef.current,
+        { y: -10, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5, ease: "power2.inOut" }
+      );
+    }
   }, []);
 
   return (
@@ -59,7 +77,7 @@ function section2() {
             "linear-gradient(to bottom right, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url(/image/carbon.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed"
+          backgroundAttachment: "fixed",
         }}
         className="page page2"
       >

@@ -51,3 +51,12 @@ nav {
     }
   }
 }
+@media (min-width: 640px) and (max-width: 1024px) {
+  nav{
+    .logo{
+      display: flex;
+      align-items: center;
+      left: 0;
+    }
+  }
+}

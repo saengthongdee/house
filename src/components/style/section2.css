@@ -80,3 +80,33 @@
     }
   }
 }
+
+@media (min-width: 640px) and (max-width: 1024px) {
+    .page2 {
+      .area-image{
+        display: none;
+      }
+      .area-text{
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        h2{
+          font-size: 56px;
+        }
+
+        p{
+          width: 100%;
+          font-size: 18px;
+          text-align: center;
+        }
+        .btn {
+          padding: 1rem 2rem;
+          font-size: 18px;
+        }
+        .btn:hover {
+          background-color: #f4f4f4;
+          color: #333;
+        }
+      }
+    }
+}

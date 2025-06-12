@@ -9,8 +9,11 @@ function section4() {
   const h3Ref = useRef();
   const h4Ref = useRef();
   const inputRef = useRef();
+
   useEffect(() => {
-    const animationtext = gsap.timeline({
+    
+    if(window.innerWidth > 1025) {
+      const animationtext = gsap.timeline({
       scrollTrigger: {
         trigger: h3Ref.current,
         start: "top 80%",
@@ -51,6 +54,49 @@ function section4() {
       {opacity: 0},
       {opacity: 1, duration:1 , ease:"power2.inOut"}
     )
+    }else if(window.innerWidth > 768){
+      const animationtext = gsap.timeline({
+      scrollTrigger: {
+        trigger: h3Ref.current,
+        start: "top 80%",
+        end: "bottom",
+        toggleActions: "play none none none",
+      },
+    });
+
+    animationtext.to(h3Ref.current, {
+      x: 800,
+      opacity: 1,
+      duration: 1.5,
+      delay: 1.5,
+      ease: "power2.out",
+    });
+    animationtext.to(h4Ref.current, {
+      x: -400,
+      opacity: 1,
+      duration: 1.5,
+      ease: "power2.out"
+    },"<");
+    animationtext.to(h3Ref.current, {
+      x: 2000,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.out",
+    });
+    
+    animationtext.to(h4Ref.current, {
+      x: -1200,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power2.out",
+    },"<");
+
+    animationtext.fromTo(
+      inputRef.current,
+      {opacity: 0},
+      {opacity: 1, duration:1 , ease:"power2.inOut"}
+    )
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

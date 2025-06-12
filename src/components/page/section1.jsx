@@ -89,7 +89,7 @@ function Section1() {
   }, [currentIndex]);
 
   useEffect(() => {
-    if (window.innerWidth > 1025) {
+    
       const optionRef = document.querySelectorAll(".box-option");
 
       optionRef.forEach((option, index) => {
@@ -140,7 +140,6 @@ function Section1() {
           },
         }
       );
-    }
   }, [currentIndex]);
   
 

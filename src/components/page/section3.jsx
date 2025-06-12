@@ -12,10 +12,29 @@ function Section3() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [carData, setCarData] = useState([]);
   const [selectedCar, setSelectedCar] = useState(null);
+  const [innerswiper, setInnerswiper] = useState(false);
 
   // Ref
   const carRef = useRef();
   const carcenterRef = useRef();
+
+  useEffect(() => {
+    const checkWidth = () => {
+      const width = window.innerWidth;
+      if (width > 760 && width <= 1025) {
+        setInnerswiper(true);
+      } else {
+        setInnerswiper(false);
+      }
+    };
+
+    checkWidth();
+
+    window.addEventListener("resize", checkWidth);
+
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
+
 
   useEffect(() => {
     axios
@@ -54,28 +73,6 @@ function Section3() {
     }
   }, []);
 
-  useEffect(() => {
-    if (window.innerWidth >= 768 && carcenterRef.current) {
-      gsap.fromTo(
-        carcenterRef.current,
-        { opacity: 0 },
-        {
-          duration: 1,
-          opacity: 1,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: carcenterRef.current,
-            start: "top 60%",
-            end: "bottom",
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-      return () => {
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-      };
-    }
-  }, []);
 
   return (
     <section
@@ -125,7 +122,8 @@ function Section3() {
       </div>
 
       <div className="car-swiper-wrapper" ref={carRef}>
-        <Swiper spaceBetween={10} slidesPerView={4.5} grabCursor={true}>
+        
+        <Swiper spaceBetween={10}  slidesPerView={innerswiper ? 2.5 : 4.5}  grabCursor={true}>
           {carData[activeIndex]?.models?.map((item, index) => (
             <SwiperSlide key={index}>
               <div

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 import Lenis from "@studio-freight/lenis";
 import Section1 from "./components/page/section1";
 import Section2 from "./components/page/section2";
@@ -8,6 +8,16 @@ import Nav from "./components/page/nav";
 import "./App.css";
 
 function App() {
+  const [isAllowed, setIsAllowed] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsAllowed(false);
+    }else {
+      setIsAllowed(true);
+    }
+  }, [isAllowed]);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1,
@@ -22,6 +32,14 @@ function App() {
 
     requestAnimationFrame(raf);
   }, []);
+
+  if (!isAllowed) {
+    return (
+      <div className="isAllowed">
+       Please access via iPad or Desktop only.
+      </div>
+    );
+  }
 
   return (
     <>

@@ -22,7 +22,6 @@
     position: relative;
     margin-bottom: 5rem;
 
-
     .slide-center {
       display: flex;
       justify-content: center;
@@ -149,8 +148,25 @@
       }
 
       &:hover {
-        transition: .25s ease-in-out;
+        transition: 0.25s ease-in-out;
         background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  .page3 {
+    .car-show-point {
+      .slide-center {
+        .option {
+
+          .topspeed,
+          .acceleration,
+          .price {
+            flex-direction: column-reverse;
+            width: 200px;
+          }
+        }
       }
     }
   }
